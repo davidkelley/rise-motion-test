@@ -1,0 +1,28 @@
+[
+  {
+    "path": "/",
+    "page": "./pages/home",
+    "chunk": "main"
+  },
+  {
+    "path": "/video/:id",
+    "page": "./pages/video",
+    "chunk": "main",
+    "data": {
+      "video": "GET https://path-to-my-api.com/video/$id"
+    }
+  },
+  {
+    "path": "/search/:query",
+    "page": "./pages/search",
+    "chunk": "main",
+    "data": {
+      "results": "GET https://path-to-my-api.com/search/$query"
+    }
+  },
+  {
+    "path": "/error",
+    "page": "./pages/error",
+    "chunk": "main"
+  }
+]
