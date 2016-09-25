@@ -6,13 +6,13 @@ As the position I have applied for is a back-end Node.js developer, I felt it ne
 
 ## Getting Started
 
-You can either `docker pull davidkelley/rise-motion:api-v0.0.0` or build the container yourself with the following command `docker build -t davidkelley/rise-motion:api-v0.0.0 .` from inside the `api/` directory.
+You can either run `docker pull davidkelley/rise-motion:api-v0.0.0` or build the container yourself with the following command `docker build -t davidkelley/rise-motion:api-v0.0.0 .` from inside the `api/` directory.
 
 _When building the container on your local machine, you can supply a `$ver` arg to configure which release of Serverless is installed globally._
 
 ## Deploying the functions
 
-You can use the container to deploy the functions to AWS using the command below.
+You can use the container to deploy the functions to AWS using the commands below.
 
 ```
 docker run -e AWS_SECRET_ACCESS_KEY=__SECRET__ -e AWS_ACCESS_KEY_ID=__ID__ davidkelley/rise-motion:api-v0.0.0 serverless deploy
