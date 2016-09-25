@@ -9,17 +9,17 @@ const SEARCH = require('./defaults/search.json');
 const VIDEO = require('./defaults/video.json');
 const RELATED = require('./defaults/related.json');
 
-var paginationHeaders = (body) => {
-  return {
-    'X-Pagination-Total': body.total,
-    'X-Pagination-Page': body.page,
-    'X-Pagination-Per-Page': body.limit,
-    'X-Pagination-Pages': Math.ceil(body.total / body.limit)
-  }
-}
-
 module.exports.search = (event, context, cb) => {
   var qs = extend({}, SEARCH, event.query);
+
+  var paginationHeaders = (body) => {
+    return {
+      'X-Pagination-Total': body.total,
+      'X-Pagination-Page': body.page,
+      'X-Pagination-Per-Page': body.limit,
+      'X-Pagination-Pages': Math.ceil(body.total / body.limit)
+    }
+  }
 
   var onSearch = (err, res, body) => {
     if(err) {
@@ -79,7 +79,7 @@ module.exports.related = (event, context, cb) => {
       if(err) {
         cb(new Error(`[400] ${err.message}`))
       } else {
-        cb(null, { body: body.list, header: paginationHeaders(body) });
+        cb(null, body.list);
       }
     });
   }

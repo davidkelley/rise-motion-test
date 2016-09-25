@@ -45,10 +45,3 @@ functions:
           path: related
           method: get
           cors: true
-          response:
-            headers:
-              X-Pagination-Total: integration.response.body.header.X-Pagination-Total
-              X-Pagination-Page: integration.response.body.header.X-Pagination-Page
-              X-Pagination-Per-Page: integration.response.body.header.X-Pagination-Per-Page
-              X-Pagination-Pages: integration.response.body.header.X-Pagination-Pages
-            template: $input.path('$.body')

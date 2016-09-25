@@ -1,0 +1,15 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=4.3"
+  },
+  "dependencies": {
+    "request": "2.75.0",
+    "extend": "3.0.0"
+  },
+  "devDependencies": {
+    "serverless-mocha-plugin": "~1.0"
+  }
+}
