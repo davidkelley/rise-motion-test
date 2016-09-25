@@ -56,8 +56,8 @@ function resolve(routes, context) {
         ...keys.map(key => {
           const query = route.data[key];
           const method = query.substring(0, query.indexOf(' ')); // GET
-          const url = query.substr(query.indexOf(' ') + 1);      // /api/tasks/$id
-          // TODO: Replace query parameters with actual values coming from `params`
+          var url = query.substr(query.indexOf(' ') + 1);      // /api/tasks/$id
+          for (let [key, val] of Object.entries(params)) { url = url.replace(`$${key}`, val) };
           return fetch(url, { method }).then(resp => resp.json());
         }),
       ]).then(([Page, ...data]) => {

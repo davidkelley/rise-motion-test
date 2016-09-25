@@ -1,0 +1,54 @@
+service: rise-test
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: v0
+
+plugins:
+  - serverless-mocha-plugin
+
+package:
+ include:
+   - defaults/search.json
+   - defaults/related.json
+   - defaults/video.json
+
+functions:
+  search:
+    handler: handler.search
+    events:
+      - http:
+          path: search
+          method: get
+          cors: true
+          response:
+            headers:
+              X-Pagination-Total: integration.response.body.header.X-Pagination-Total
+              X-Pagination-Page: integration.response.body.header.X-Pagination-Page
+              X-Pagination-Per-Page: integration.response.body.header.X-Pagination-Per-Page
+              X-Pagination-Pages: integration.response.body.header.X-Pagination-Pages
+            template: $input.path('$.body')
+
+  video:
+    handler: handler.video
+    events:
+      - http:
+          path: video
+          method: get
+          cors: true
+
+  related:
+    handler: handler.related
+    events:
+      - http:
+          path: related
+          method: get
+          cors: true
+          response:
+            headers:
+              X-Pagination-Total: integration.response.body.header.X-Pagination-Total
+              X-Pagination-Page: integration.response.body.header.X-Pagination-Page
+              X-Pagination-Per-Page: integration.response.body.header.X-Pagination-Per-Page
+              X-Pagination-Pages: integration.response.body.header.X-Pagination-Pages
+            template: $input.path('$.body')

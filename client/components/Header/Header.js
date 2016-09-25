@@ -7,7 +7,8 @@ class Header extends Component {
     history.push(`/search/${query}`);
   }
 
-  handleOnClick = (event) => {
+  handleOnSubmit = (e) => {
+    e.preventDefault();
     if(this.searchQuery && this.searchQuery.value.length > 0) {
       this.onSearch(this.searchQuery.value);
     }
@@ -19,10 +20,10 @@ class Header extends Component {
         <h3 className="ui dividing header">
           <a href="http://riseproject.com/" target="_blank">RISE Project</a> Technical Test
         </h3>
-        <div className="ui fluid action input">
-          <input type="text" ref={(ref) => this.searchQuery = ref} placeholder="Search..." name="search" />
-          <button className="ui button" onClick={this.handleOnClick}>Search</button>
-        </div>
+        <form className="ui fluid action input" onSubmit={this.handleOnSubmit}>
+          <input type="text" ref={(ref) => this.searchQuery = ref} placeholder="Search Dailymotion..." name="search" />
+          <button className="ui button">Search</button>
+        </form>
       </header>
     );
   }

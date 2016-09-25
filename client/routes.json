@@ -2,22 +2,26 @@
   {
     "path": "/",
     "page": "./pages/home",
-    "chunk": "main"
+    "chunk": "main",
+    "data": {
+      "feed": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/search"
+    }
   },
   {
     "path": "/video/:id",
     "page": "./pages/video",
     "chunk": "main",
     "data": {
-      "video": "GET https://path-to-my-api.com/video/$id"
+      "video": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/video?id=$id",
+      "related": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/related?id=$id"
     }
   },
   {
-    "path": "/search/:query",
+    "path": "/search/:term",
     "page": "./pages/search",
     "chunk": "main",
     "data": {
-      "results": "GET https://path-to-my-api.com/search/$query"
+      "results": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/search?search=$term"
     }
   },
   {
