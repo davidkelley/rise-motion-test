@@ -6,6 +6,10 @@ I composed the client application as a single page application that can be compi
 
 Using `docker pull davidkelley/rise-motion:client-v0.0.0` or `docker build -t davidkelley/rise-motion:client-v0.0.0 .` you can build the client container, from inside the `client/` directory.
 
+### Updating the endpoints
+
+Change the API Gateway endpoint being used inside `core/constants.js` to your deployed endpoint.
+
 ## Running the Client
 
 Use `docker run -d -p 3000:3000 -p 3001:3001 -p 5000:5000 davidkelley/rise-motion:client-v0.0.0 npm start` to begin the server that hosts the development environment for the client.

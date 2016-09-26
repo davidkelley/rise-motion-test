@@ -8,7 +8,7 @@ Each folder has a separate `README.md` file that assists you with getting each p
 
 The client is a single-page application that uses API endpoints to communicate with the Dailymotion API. Whilst this is not necessarily required, the position that I applied for is a back-end Node.js developer so I thought it best to incorporate a back-end component.
 
-![IMDB Bot](https://github.com/davidkelley/rise-motion-test/blob/master/.github/images/demo.gif?raw=true "RISE Motion")
+![RISE Motion](https://github.com/davidkelley/rise-motion-test/blob/master/.github/images/demo.gif?raw=true "RISE Motion")
 
 ## API
 

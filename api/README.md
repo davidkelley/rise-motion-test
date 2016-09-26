@@ -4,6 +4,8 @@ I have decided to compose the back-end service as a set of Lambda functions that
 
 As the position I have applied for is a back-end Node.js developer, I felt it necessary to implement some sort of back-end service -- despite the fact that it is not necessarily required to access the Dailymotion API.
 
+As I have already deployed the functions to AWS, it is not necessary to deploy them yourself. However, I have documented the process below. Once deployed to your own endpoint, you will need to update the endpoints in the client.
+
 ## Getting Started
 
 You can either run `docker pull davidkelley/rise-motion:api-v0.0.0` or build the container yourself with the following command `docker build -t davidkelley/rise-motion:api-v0.0.0 .` from inside the `api/` directory.

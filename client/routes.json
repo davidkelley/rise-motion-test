@@ -4,7 +4,7 @@
     "page": "./pages/home",
     "chunk": "main",
     "data": {
-      "feed": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/search"
+      "feed": "GET $API_ENDPOINT/search"
     }
   },
   {
@@ -12,8 +12,8 @@
     "page": "./pages/video",
     "chunk": "main",
     "data": {
-      "video": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/video?id=$id",
-      "related": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/related?id=$id"
+      "video": "GET $API_ENDPOINT/video?id=$id",
+      "related": "GET $API_ENDPOINT/related?id=$id"
     }
   },
   {
@@ -21,7 +21,7 @@
     "page": "./pages/search",
     "chunk": "main",
     "data": {
-      "results": "GET https://jj5cf05igi.execute-api.us-east-1.amazonaws.com/dev/search?search=$term"
+      "results": "GET $API_ENDPOINT/search?search=$term"
     }
   },
   {

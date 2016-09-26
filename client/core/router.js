@@ -1,4 +1,5 @@
 import React from 'react';
+import { API_ENDPOINT } from './constants';
 
 function decodeParam(val) {
   if (!(typeof val === 'string' || val.length === 0)) {
@@ -28,6 +29,8 @@ function matchURI(route, path) {
   }
 
   const params = Object.create(null);
+
+  params.API_ENDPOINT = API_ENDPOINT;
 
   for (let i = 1; i < match.length; i++) {
     params[route.keys[i - 1].name] = match[i] !== undefined ? decodeParam(match[i]) : undefined;
